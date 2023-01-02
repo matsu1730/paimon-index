@@ -2,18 +2,18 @@ import genshin as gi
 import genshinstats as gs
 import simple_colors as sc
 
+# Quantity Counting
+fiveStar = 0;
+fourStar = 0;
+threeStar = 0;
+currentPity = 0;
+
 # Getting authKey from game log files
 client = gi.Client()
 client.authkey = gi.utility.get_authkey()
 
 pity = gs.get_wish_history(authkey=client.authkey, banner_type=301, size=90)
 history = gs.get_wish_history(authkey=client.authkey, banner_type=301, size=200)
-
-# Quantity Counting
-fiveStar = 0;
-fourStar = 0;
-threeStar = 0;
-currentPity = 0;
 
 # Pity Counter
 for index, wish in enumerate(pity):
@@ -22,7 +22,6 @@ for index, wish in enumerate(pity):
         continue
     else:
         break
-        
 
 # Wish History
 for wish in history:
